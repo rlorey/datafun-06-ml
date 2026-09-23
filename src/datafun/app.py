@@ -1,6 +1,6 @@
 """src/datafun/app.py - Project script.
 
-Author: Denise Case
+Author: Rebecca Lorey
 Date: 2026-09
 
 HOW TO RUN THIS FILE:
@@ -82,7 +82,7 @@ LOG: logging.Logger = get_logger("P06", level="DEBUG")
 
 # === LOCATE THE DATA FILE ===
 
-DATA_FILE_PATH: Final[Path] = Path("data") / "raw" / "penguins.csv"
+DATA_FILE_PATH: Final[Path] = Path("data") / "raw" / "life_expectancy_table.csv"
 
 # === LOCATE THE CHART OUTPUT ===
 
@@ -94,7 +94,7 @@ RESIDUAL_CHART_PATH: Final[Path] = CHART_DIR / "regression-residuals.png"
 
 # === DETERMINE WHAT ONE ROW REPRESENTS ===
 
-GRAIN: Final[str] = "one penguin"
+GRAIN: Final[str] = "one country"
 
 # === DECLARE THE TARGET ===
 
@@ -102,7 +102,7 @@ GRAIN: Final[str] = "one penguin"
 # This must match a numeric column name EXACTLY
 # as it appears in the data file.
 
-TARGET_COLUMN: Final[str] = "body_mass_g"
+TARGET_COLUMN: Final[str] = "Life expectancy "
 
 # === DECLARE THE FEATURE ===
 
@@ -111,7 +111,7 @@ TARGET_COLUMN: Final[str] = "body_mass_g"
 # This must match a numeric column name EXACTLY
 # as it appears in the data file.
 
-FEATURE_COLUMN: Final[str] = "bill_length_mm"
+FEATURE_COLUMN: Final[str] = "Schooling"
 
 # === DOCUMENT WHY THE FEATURE MIGHT HELP ===
 
@@ -120,15 +120,15 @@ FEATURE_COLUMN: Final[str] = "bill_length_mm"
 # The model and evaluation will provide evidence.
 
 FEATURE_DECISION: Final[str] = r"""
-I want to predict body mass.
+I want to predict life expectancy.
 
-I selected bill length as the feature.
+I selected schooling as the feature.
 
-A bigger penguin may have both a longer bill and more mass,
-so bill length might contain useful information
-for predicting body mass.
+Higher schooling may be associated with better health outcomes,
+so schooling might contain useful information
+for predicting life expectancy.
 
-I do not know yet how well bill length will predict body mass.
+I do not know yet how well schooling will predict life expectancy.
 The modeling process will provide evidence.
 """
 
@@ -181,8 +181,8 @@ BASELINE_DECISION: Final[str] = r"""
 Before evaluating the LinearRegression model,
 I need a simple baseline for comparison.
 
-The baseline will ignore bill length
-and predict the average body mass
+The baseline will ignore schooling 
+and predict the average life expectancy
 from the training data for every test observation.
 
 A useful predictive model should improve
@@ -437,9 +437,9 @@ def main() -> None:
     # CUSTOM: The analyst can customize
     # the returned Matplotlib Axes object.
 
-    prediction_ax.set_title("Bill Length vs. Body Mass")
-    prediction_ax.set_xlabel("Bill Length (mm)")
-    prediction_ax.set_ylabel("Body Mass (g)")
+    prediction_ax.set_title("Schooling vs. Life Expectancy")
+    prediction_ax.set_xlabel("Schooling")
+    prediction_ax.set_ylabel("Life Expectancy")
     prediction_ax.legend()
 
     save_chart(
@@ -474,9 +474,9 @@ def main() -> None:
     # CUSTOM: The analyst can customize
     # the returned Matplotlib Axes object.
 
-    residual_ax.set_title("Residuals for Bill Length Model")
-    residual_ax.set_xlabel("Bill Length (mm)")
-    residual_ax.set_ylabel("Residual (Actual - Predicted Body Mass)")
+    residual_ax.set_title("Residuals for Life Expectancy Model")
+    residual_ax.set_xlabel("Schooling")
+    residual_ax.set_ylabel("Residual (Actual - Predicted Life Expectancy)")
 
     save_chart(
         residual_ax,
@@ -500,7 +500,7 @@ def main() -> None:
     # in a simple multi-line raw string.
 
     LOG.info(r"""CUSTOM OBSERVATIONS:
-    I used bill length to predict body mass.
+    I used schooling to predict mortality.
 
     The baseline RMSE was ...
     The LinearRegression RMSE was ...
