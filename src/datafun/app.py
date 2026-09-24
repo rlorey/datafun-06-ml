@@ -102,7 +102,7 @@ GRAIN: Final[str] = "one country"
 # This must match a numeric column name EXACTLY
 # as it appears in the data file.
 
-TARGET_COLUMN: Final[str] = "Life expectancy "
+TARGET_COLUMN: Final[str] = "Life expectancy"
 
 # === DECLARE THE FEATURE ===
 
@@ -232,6 +232,21 @@ def main() -> None:
     log_path(LOG, "data file", path=DATA_FILE_PATH)
 
     df: pd.DataFrame = pd.read_csv(DATA_FILE_PATH)
+
+
+
+    # --- START OF DATA CLEANING CODE ---
+# 1. Strip hidden whitespace from column names to prevent KeyErrors
+    df.columns = df.columns.str.strip()
+
+# 2. Strip hidden whitespace from any text/string columns
+    string_cols = df.select_dtypes(include=['object']).columns
+    df[string_cols] = df[string_cols].apply(lambda x: x.str.strip() if hasattr(x, 'str') else x)
+
+# 3. Safely drop records missing core target fields
+    if 'Life expectancy ' in df.columns:
+        df = df.dropna(subset=['Life expectancy '])
+# ---- END OF DATA CLEANING CODE ----
 
     LOG.info("Data loaded successfully.")
     LOG.info(f"Grain: {GRAIN}")
@@ -502,20 +517,30 @@ def main() -> None:
     LOG.info(r"""CUSTOM OBSERVATIONS:
     I used schooling to predict mortality.
 
-    The baseline RMSE was ...
-    The LinearRegression RMSE was ...
+    The baseline RMSE was 9.30.
+    The LinearRegression RMSE was 5.82.
 
     Compared with the baseline,
-    the LinearRegression model ...
+    the LinearRegression model improved 
+    performance, reducing the average prediction error by 3.48 years (a ~37.4% reduction in error).
 
-    The model R-squared was ...
+    The model R-squared was 0.608 meaning that 
+    about 60% of the variance in life expectancy
+    can be explained by schooling.
 
-    In the residual plot, I observed ...
+    In the residual plot, I observed the spread
+    of the residuals are not uniform across the 0-axis. 
+    
+    Based on this evidence, the model may not be capturing all the 
+    factors influencing life expectancy, and there might be 
+    some systematic patterns in the residuals.
+    
+    I conclude that the LinearRegression model using schooling 
+    as a predictor for life expectancy provides a reasonable fit 
+    for life expectancy, but it does not capture all the factors influencing it.
 
-    Based on this evidence,
-    I conclude ...
-
-    Next, I would like to try ...
+    Next, I would like to try a gradient boosting model 
+    to incorporate multiple features to improve the model's predictive power.
     """)
 
     # ============================================================

@@ -4,28 +4,31 @@
 [![uv managed](https://img.shields.io/badge/uv-managed-DE5FE9)](https://docs.astral.sh/uv/)
 [![ty type checked](https://img.shields.io/badge/ty-type_checked-2F80ED)](https://docs.astral.sh/ty/)
 [![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://docs.astral.sh/ruff/)
-[![Jupyter](https://img.shields.io/badge/Jupyter-notebook-F37626?logo=jupyter&logoColor=white)](https://jupyter.org/)
-[![marimo](https://img.shields.io/badge/marimo-reactive_notebook-FF6B6B)](https://docs.marimo.io/)
 [![Zensical docs](https://img.shields.io/badge/Zensical-docs-purple)](https://zensical.org/)
 [![MIT](https://img.shields.io/badge/license-see%20LICENSE-yellow.svg)](./LICENSE)
 
 > Professional Python project: linear regression and predictive analytics.
 
-## Project Goal
+## 📈 Life Expectancy Linear Regression
 
-This project introduces **linear regression**, the process of
-fitting a model to data and using it to make predictions.
+This project builds a predictive machine learning pipeline using **Linear Regression** to analyze and estimate global life expectancy metrics based on schooling.
 
-Think about two variables that might be related:
+### 🧹 Data Cleaning Pipeline
+Before training the model, the raw dataset (`data/raw/life_expectancy_table.csv`) undergoes a rigorous preprocessing stage to ensure statistical integrity:
+* **Whitespace Elimination:** Strips hidden leading and trailing spaces from structural column headers to prevent `KeyError` exceptions.
+* **String Standardization:** Sanitizes text entries across categorical features like country names and regions.
+* **Missing Value Management:** Safely drops records containing missing values in core target fields (such as `Life expectancy` and `Year`) to ensure a continuous, clean matrix for regression mathematics.
 
-- Does study time predict exam scores?
-- Does temperature predict energy usage?
-- Does advertising spend predict revenue?
+### 🤖 Machine Learning Concepts
+The project utilizes several fundamental data science workflows and evaluation metrics:
 
-Your goal: run the example, read the code,
-and apply the same approach to a dataset and question of your own choosing.
+* **Train/Test Split:** The dataset is split into training sets (to teach the model patterns) and testing sets (to evaluate performance on unseen data), preventing overfitting.
+* **Feature Selection:** Identifies highly correlated explanatory features that hold a strong linear relationship with mortality and longevity rates.
+* **Linear Regression:** Fits an optimal hyperplane (line of best fit) minimizing the residual sum of squares between the observed data points and predicted values.
+* **Model Evaluation Metrics:** 
+  * **Mean Squared Error (MSE):** Measures the average squared difference between estimated values and the actual target.
+  * **R² Score (Coefficient of Determination):** Quantifies the proportion of variance in life expectancy that is predictable from the independent input variables.
 
-For data suggestions, please see [data/raw/README.md](data/raw/README.md).
 
 ## Standard Process
 

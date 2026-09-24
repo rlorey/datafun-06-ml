@@ -1100,3 +1100,452 @@ will help assess whether the model is useful.
     
 2026-09-23 17:07:21 | INFO | P06 | In a script, call plt.show() at the end to display all charts.
 2026-09-23 17:07:21 | INFO | P06 | Close all chart windows (with the close button) to continue.
+2026-09-24 10:11:05 | INFO | P06 | === RUN START ===
+2026-09-24 10:11:05 | INFO | P06 | project=P06 - LINEAR REGRESSION
+2026-09-24 10:11:05 | INFO | P06 | repo_dir=datafun-06-ml
+2026-09-24 10:11:05 | INFO | P06 | python=3.14.7
+2026-09-24 10:11:05 | INFO | P06 | os=Darwin 23.5.0
+2026-09-24 10:11:05 | INFO | P06 | shell=zsh
+2026-09-24 10:11:05 | INFO | P06 | cwd=.
+2026-09-24 10:11:05 | INFO | P06 | github_actions=False
+2026-09-24 10:11:05 | INFO | P06 | ===================================
+2026-09-24 10:11:05 | INFO | P06 | START main()
+2026-09-24 10:11:05 | INFO | P06 | ===================================
+2026-09-24 10:11:05 | INFO | P06 | -------------------------------
+2026-09-24 10:11:05 | INFO | P06 | 01. OBSERVE the data and prior findings.
+2026-09-24 10:11:05 | INFO | P06 | -------------------------------
+2026-09-24 10:11:05 | INFO | P06 | data file = data/raw/life_expectancy_table.csv
+2026-09-24 10:11:05 | INFO | P06 | Data loaded successfully.
+2026-09-24 10:11:05 | INFO | P06 | Grain: one country
+2026-09-24 10:11:05 | INFO | P06 | Rows: 2928
+2026-09-24 10:11:05 | INFO | P06 | Columns: 22
+2026-09-24 10:11:05 | INFO | P06 | Column names: ['Country', 'Year', 'Status', 'Life expectancy', 'Adult Mortality', 'infant deaths', 'Alcohol', 'percentage expenditure', 'Hepatitis B', 'Measles', 'BMI', 'under-five deaths', 'Polio', 'Total expenditure', 'Diphtheria', 'HIV/AIDS', 'GDP', 'Population', 'thinness  1-19 years', 'thinness 5-9 years', 'Income composition of resources', 'Schooling']
+2026-09-24 10:11:05 | INFO | P06 | -------------------------------
+2026-09-24 10:11:05 | INFO | P06 | 02. DECLARE the target and feature.
+2026-09-24 10:11:05 | INFO | P06 | -------------------------------
+2026-09-24 10:11:05 | INFO | P06 | Target:  Life expectancy 
+2026-09-24 10:11:05 | INFO | P06 | Feature: Schooling
+2026-09-24 10:11:05 | INFO | P06 | 
+I want to predict life expectancy.
+
+I selected schooling as the feature.
+
+Higher schooling may be associated with better health outcomes,
+so schooling might contain useful information
+for predicting life expectancy.
+
+I do not know yet how well schooling will predict life expectancy.
+The modeling process will provide evidence.
+
+2026-09-24 10:11:05 | INFO | P06 | -------------------------------
+2026-09-24 10:11:05 | INFO | P06 | 03. PREPARE the modeling data.
+2026-09-24 10:11:05 | INFO | P06 | -------------------------------
+2026-09-24 10:12:57 | INFO | P06 | === RUN START ===
+2026-09-24 10:12:57 | INFO | P06 | project=P06 - LINEAR REGRESSION
+2026-09-24 10:12:57 | INFO | P06 | repo_dir=datafun-06-ml
+2026-09-24 10:12:57 | INFO | P06 | python=3.14.7
+2026-09-24 10:12:57 | INFO | P06 | os=Darwin 23.5.0
+2026-09-24 10:12:57 | INFO | P06 | shell=zsh
+2026-09-24 10:12:57 | INFO | P06 | cwd=.
+2026-09-24 10:12:57 | INFO | P06 | github_actions=False
+2026-09-24 10:12:57 | INFO | P06 | ===================================
+2026-09-24 10:12:57 | INFO | P06 | START main()
+2026-09-24 10:12:57 | INFO | P06 | ===================================
+2026-09-24 10:12:57 | INFO | P06 | -------------------------------
+2026-09-24 10:12:57 | INFO | P06 | 01. OBSERVE the data and prior findings.
+2026-09-24 10:12:57 | INFO | P06 | -------------------------------
+2026-09-24 10:12:57 | INFO | P06 | data file = data/raw/life_expectancy_table.csv
+2026-09-24 10:13:36 | INFO | P06 | === RUN START ===
+2026-09-24 10:13:36 | INFO | P06 | project=P06 - LINEAR REGRESSION
+2026-09-24 10:13:36 | INFO | P06 | repo_dir=datafun-06-ml
+2026-09-24 10:13:36 | INFO | P06 | python=3.14.7
+2026-09-24 10:13:36 | INFO | P06 | os=Darwin 23.5.0
+2026-09-24 10:13:36 | INFO | P06 | shell=zsh
+2026-09-24 10:13:36 | INFO | P06 | cwd=.
+2026-09-24 10:13:36 | INFO | P06 | github_actions=False
+2026-09-24 10:13:36 | INFO | P06 | ===================================
+2026-09-24 10:13:36 | INFO | P06 | START main()
+2026-09-24 10:13:36 | INFO | P06 | ===================================
+2026-09-24 10:13:36 | INFO | P06 | -------------------------------
+2026-09-24 10:13:36 | INFO | P06 | 01. OBSERVE the data and prior findings.
+2026-09-24 10:13:36 | INFO | P06 | -------------------------------
+2026-09-24 10:13:36 | INFO | P06 | data file = data/raw/life_expectancy_table.csv
+2026-09-24 10:13:36 | INFO | P06 | Data loaded successfully.
+2026-09-24 10:13:36 | INFO | P06 | Grain: one country
+2026-09-24 10:13:36 | INFO | P06 | Rows: 2938
+2026-09-24 10:13:36 | INFO | P06 | Columns: 22
+2026-09-24 10:13:36 | INFO | P06 | Column names: ['Country', 'Year', 'Status', 'Life expectancy', 'Adult Mortality', 'infant deaths', 'Alcohol', 'percentage expenditure', 'Hepatitis B', 'Measles', 'BMI', 'under-five deaths', 'Polio', 'Total expenditure', 'Diphtheria', 'HIV/AIDS', 'GDP', 'Population', 'thinness  1-19 years', 'thinness 5-9 years', 'Income composition of resources', 'Schooling']
+2026-09-24 10:13:36 | INFO | P06 | -------------------------------
+2026-09-24 10:13:36 | INFO | P06 | 02. DECLARE the target and feature.
+2026-09-24 10:13:36 | INFO | P06 | -------------------------------
+2026-09-24 10:13:36 | INFO | P06 | Target:  Life expectancy 
+2026-09-24 10:13:36 | INFO | P06 | Feature: Schooling
+2026-09-24 10:13:36 | INFO | P06 | 
+I want to predict life expectancy.
+
+I selected schooling as the feature.
+
+Higher schooling may be associated with better health outcomes,
+so schooling might contain useful information
+for predicting life expectancy.
+
+I do not know yet how well schooling will predict life expectancy.
+The modeling process will provide evidence.
+
+2026-09-24 10:13:36 | INFO | P06 | -------------------------------
+2026-09-24 10:13:36 | INFO | P06 | 03. PREPARE the modeling data.
+2026-09-24 10:13:36 | INFO | P06 | -------------------------------
+2026-09-24 10:14:27 | INFO | P06 | === RUN START ===
+2026-09-24 10:14:27 | INFO | P06 | project=P06 - LINEAR REGRESSION
+2026-09-24 10:14:27 | INFO | P06 | repo_dir=datafun-06-ml
+2026-09-24 10:14:27 | INFO | P06 | python=3.14.7
+2026-09-24 10:14:27 | INFO | P06 | os=Darwin 23.5.0
+2026-09-24 10:14:27 | INFO | P06 | shell=zsh
+2026-09-24 10:14:27 | INFO | P06 | cwd=.
+2026-09-24 10:14:27 | INFO | P06 | github_actions=False
+2026-09-24 10:14:27 | INFO | P06 | ===================================
+2026-09-24 10:14:27 | INFO | P06 | START main()
+2026-09-24 10:14:27 | INFO | P06 | ===================================
+2026-09-24 10:14:27 | INFO | P06 | -------------------------------
+2026-09-24 10:14:27 | INFO | P06 | 01. OBSERVE the data and prior findings.
+2026-09-24 10:14:27 | INFO | P06 | -------------------------------
+2026-09-24 10:14:27 | INFO | P06 | data file = data/raw/life_expectancy_table.csv
+2026-09-24 10:14:27 | INFO | P06 | Data loaded successfully.
+2026-09-24 10:14:27 | INFO | P06 | Grain: one country
+2026-09-24 10:14:27 | INFO | P06 | Rows: 2938
+2026-09-24 10:14:27 | INFO | P06 | Columns: 22
+2026-09-24 10:14:27 | INFO | P06 | Column names: ['Country', 'Year', 'Status', 'Life expectancy', 'Adult Mortality', 'infant deaths', 'Alcohol', 'percentage expenditure', 'Hepatitis B', 'Measles', 'BMI', 'under-five deaths', 'Polio', 'Total expenditure', 'Diphtheria', 'HIV/AIDS', 'GDP', 'Population', 'thinness  1-19 years', 'thinness 5-9 years', 'Income composition of resources', 'Schooling']
+2026-09-24 10:14:27 | INFO | P06 | -------------------------------
+2026-09-24 10:14:27 | INFO | P06 | 02. DECLARE the target and feature.
+2026-09-24 10:14:27 | INFO | P06 | -------------------------------
+2026-09-24 10:14:27 | INFO | P06 | Target:  Life expectancy 
+2026-09-24 10:14:27 | INFO | P06 | Feature: Schooling
+2026-09-24 10:14:27 | INFO | P06 | 
+I want to predict life expectancy.
+
+I selected schooling as the feature.
+
+Higher schooling may be associated with better health outcomes,
+so schooling might contain useful information
+for predicting life expectancy.
+
+I do not know yet how well schooling will predict life expectancy.
+The modeling process will provide evidence.
+
+2026-09-24 10:14:27 | INFO | P06 | -------------------------------
+2026-09-24 10:14:27 | INFO | P06 | 03. PREPARE the modeling data.
+2026-09-24 10:14:27 | INFO | P06 | -------------------------------
+2026-09-24 10:16:39 | INFO | P06 | === RUN START ===
+2026-09-24 10:16:39 | INFO | P06 | project=P06 - LINEAR REGRESSION
+2026-09-24 10:16:39 | INFO | P06 | repo_dir=datafun-06-ml
+2026-09-24 10:16:39 | INFO | P06 | python=3.14.7
+2026-09-24 10:16:39 | INFO | P06 | os=Darwin 23.5.0
+2026-09-24 10:16:39 | INFO | P06 | shell=zsh
+2026-09-24 10:16:39 | INFO | P06 | cwd=.
+2026-09-24 10:16:39 | INFO | P06 | github_actions=False
+2026-09-24 10:16:39 | INFO | P06 | ===================================
+2026-09-24 10:16:39 | INFO | P06 | START main()
+2026-09-24 10:16:39 | INFO | P06 | ===================================
+2026-09-24 10:16:39 | INFO | P06 | -------------------------------
+2026-09-24 10:16:39 | INFO | P06 | 01. OBSERVE the data and prior findings.
+2026-09-24 10:16:39 | INFO | P06 | -------------------------------
+2026-09-24 10:16:39 | INFO | P06 | data file = data/raw/life_expectancy_table.csv
+2026-09-24 10:16:39 | INFO | P06 | Data loaded successfully.
+2026-09-24 10:16:39 | INFO | P06 | Grain: one country
+2026-09-24 10:16:39 | INFO | P06 | Rows: 2938
+2026-09-24 10:16:39 | INFO | P06 | Columns: 22
+2026-09-24 10:16:39 | INFO | P06 | Column names: ['Country', 'Year', 'Status', 'Life expectancy', 'Adult Mortality', 'infant deaths', 'Alcohol', 'percentage expenditure', 'Hepatitis B', 'Measles', 'BMI', 'under-five deaths', 'Polio', 'Total expenditure', 'Diphtheria', 'HIV/AIDS', 'GDP', 'Population', 'thinness  1-19 years', 'thinness 5-9 years', 'Income composition of resources', 'Schooling']
+2026-09-24 10:16:39 | INFO | P06 | -------------------------------
+2026-09-24 10:16:39 | INFO | P06 | 02. DECLARE the target and feature.
+2026-09-24 10:16:39 | INFO | P06 | -------------------------------
+2026-09-24 10:16:39 | INFO | P06 | Target:  Life expectancy
+2026-09-24 10:16:39 | INFO | P06 | Feature: Schooling
+2026-09-24 10:16:39 | INFO | P06 | 
+I want to predict life expectancy.
+
+I selected schooling as the feature.
+
+Higher schooling may be associated with better health outcomes,
+so schooling might contain useful information
+for predicting life expectancy.
+
+I do not know yet how well schooling will predict life expectancy.
+The modeling process will provide evidence.
+
+2026-09-24 10:16:39 | INFO | P06 | -------------------------------
+2026-09-24 10:16:39 | INFO | P06 | 03. PREPARE the modeling data.
+2026-09-24 10:16:39 | INFO | P06 | -------------------------------
+2026-09-24 10:16:39 | INFO | P06 | Original rows: 2938
+2026-09-24 10:16:39 | INFO | P06 | Modeling rows: 2768
+2026-09-24 10:16:39 | INFO | P06 | Rows dropped: 170
+2026-09-24 10:16:39 | INFO | P06 | X shape: (2768, 1)
+2026-09-24 10:16:39 | INFO | P06 | y shape: (2768,)
+2026-09-24 10:16:39 | INFO | P06 | -------------------------------
+2026-09-24 10:16:39 | INFO | P06 | 04. SPLIT into training and test data.
+2026-09-24 10:16:39 | INFO | P06 | -------------------------------
+2026-09-24 10:16:39 | INFO | P06 | 
+I will use 80% of the modeling rows for training
+and hold back 20% for testing.
+
+I want most of the available data to be available
+for learning the model,
+while still keeping a separate set of observations
+that the model did not see during training.
+
+The test rows will be used later
+to evaluate how the trained model performs
+on unseen observations.
+
+I will use a random seed of 42.
+
+The specific value 42 is not analytically important.
+I use a fixed seed so the random split is reproducible.
+Running the project again will produce the same
+training and test observations,
+which makes results easier to reproduce and compare.
+
+2026-09-24 10:16:39 | INFO | P06 | Training rows: 2214
+2026-09-24 10:16:39 | INFO | P06 | Test rows: 554
+2026-09-24 10:16:39 | INFO | P06 | -------------------------------
+2026-09-24 10:16:39 | INFO | P06 | 05. BASELINE with a simple reference model.
+2026-09-24 10:16:39 | INFO | P06 | -------------------------------
+2026-09-24 10:16:39 | INFO | P06 | 
+Before evaluating the LinearRegression model,
+I need a simple baseline for comparison.
+
+The baseline will ignore schooling 
+and predict the average life expectancy
+from the training data for every test observation.
+
+A useful predictive model should improve
+on this simple reference prediction.
+
+2026-09-24 10:16:39 | INFO | P06 | Baseline strategy: mean
+2026-09-24 10:16:39 | INFO | P06 | Baseline RMSE: 9.30
+2026-09-24 10:16:39 | INFO | P06 | Baseline R-squared: -0.002
+2026-09-24 10:16:39 | INFO | P06 | -------------------------------
+2026-09-24 10:16:39 | INFO | P06 | 06. TRAIN a LinearRegression model.
+2026-09-24 10:16:39 | INFO | P06 | -------------------------------
+2026-09-24 10:16:39 | INFO | P06 | 
+I will use LinearRegression.
+
+Linear regression fits a straight-line relationship
+between the selected feature and target.
+
+This gives a simple and interpretable model
+that can be compared with the baseline.
+
+Fitting a line does not prove that a straight line
+is a good description of the relationship.
+
+The evaluation metrics and residual plot
+will help assess whether the model is useful.
+
+2026-09-24 10:16:39 | INFO | P06 | The model learned this line:
+2026-09-24 10:16:39 | INFO | P06 | Life expectancy = 2.083 * Schooling + 44.439
+2026-09-24 10:16:39 | INFO | P06 | -------------------------------
+2026-09-24 10:16:39 | INFO | P06 | 07. PREDICT on X_test.
+2026-09-24 10:16:39 | INFO | P06 | -------------------------------
+2026-09-24 10:16:39 | INFO | P06 | Predictions created: 554
+2026-09-24 10:16:39 | INFO | P06 | -------------------------------
+2026-09-24 10:16:39 | INFO | P06 | 08. EVALUATE baseline vs model on y_test.
+2026-09-24 10:16:39 | INFO | P06 | -------------------------------
+2026-09-24 10:16:39 | INFO | P06 | BASELINE RESULTS
+2026-09-24 10:16:39 | INFO | P06 | RMSE:      9.30
+2026-09-24 10:16:39 | INFO | P06 | R-squared: -0.002
+2026-09-24 10:16:39 | INFO | P06 | LINEAR REGRESSION RESULTS
+2026-09-24 10:16:39 | INFO | P06 | RMSE:      5.82
+2026-09-24 10:16:39 | INFO | P06 | R-squared: 0.608
+2026-09-24 10:16:39 | INFO | P06 | -------------------------------
+2026-09-24 10:16:39 | INFO | P06 | 09. VISUALIZE predictions and residuals.
+2026-09-24 10:16:39 | INFO | P06 | -------------------------------
+2026-09-24 10:16:40 | INFO | P06 | Chart saved successfully at docs/images/regression-predictions.png.
+2026-09-24 10:16:40 | INFO | P06 | Chart saved successfully at docs/images/regression-residuals.png.
+2026-09-24 10:16:40 | INFO | P06 | -------------------------------
+2026-09-24 10:16:40 | INFO | P06 | 10. ASSESS the results.
+2026-09-24 10:16:40 | INFO | P06 | -------------------------------
+2026-09-24 10:16:40 | INFO | P06 | CUSTOM OBSERVATIONS:
+    I used schooling to predict mortality.
+
+    The baseline RMSE was ...
+    The LinearRegression RMSE was ...
+
+    Compared with the baseline,
+    the LinearRegression model ...
+
+    The model R-squared was ...
+
+    In the residual plot, I observed ...
+
+    Based on this evidence,
+    I conclude ...
+
+    Next, I would like to try ...
+    
+2026-09-24 10:16:40 | INFO | P06 | In a script, call plt.show() at the end to display all charts.
+2026-09-24 10:16:40 | INFO | P06 | Close all chart windows (with the close button) to continue.
+2026-09-24 10:16:43 | INFO | P06 | ===================================
+2026-09-24 10:16:43 | INFO | P06 | END main() - Executed successfully!
+2026-09-24 10:16:43 | INFO | P06 | ===================================
+2026-09-24 10:39:15 | INFO | P06 | === RUN START ===
+2026-09-24 10:39:15 | INFO | P06 | project=P06 - LINEAR REGRESSION
+2026-09-24 10:39:15 | INFO | P06 | repo_dir=datafun-06-ml
+2026-09-24 10:39:15 | INFO | P06 | python=3.14.7
+2026-09-24 10:39:15 | INFO | P06 | os=Darwin 23.5.0
+2026-09-24 10:39:15 | INFO | P06 | shell=zsh
+2026-09-24 10:39:15 | INFO | P06 | cwd=.
+2026-09-24 10:39:15 | INFO | P06 | github_actions=False
+2026-09-24 10:39:15 | INFO | P06 | ===================================
+2026-09-24 10:39:15 | INFO | P06 | START main()
+2026-09-24 10:39:15 | INFO | P06 | ===================================
+2026-09-24 10:39:15 | INFO | P06 | -------------------------------
+2026-09-24 10:39:15 | INFO | P06 | 01. OBSERVE the data and prior findings.
+2026-09-24 10:39:15 | INFO | P06 | -------------------------------
+2026-09-24 10:39:15 | INFO | P06 | data file = data/raw/life_expectancy_table.csv
+2026-09-24 10:39:15 | INFO | P06 | Data loaded successfully.
+2026-09-24 10:39:15 | INFO | P06 | Grain: one country
+2026-09-24 10:39:15 | INFO | P06 | Rows: 2938
+2026-09-24 10:39:15 | INFO | P06 | Columns: 22
+2026-09-24 10:39:15 | INFO | P06 | Column names: ['Country', 'Year', 'Status', 'Life expectancy', 'Adult Mortality', 'infant deaths', 'Alcohol', 'percentage expenditure', 'Hepatitis B', 'Measles', 'BMI', 'under-five deaths', 'Polio', 'Total expenditure', 'Diphtheria', 'HIV/AIDS', 'GDP', 'Population', 'thinness  1-19 years', 'thinness 5-9 years', 'Income composition of resources', 'Schooling']
+2026-09-24 10:39:15 | INFO | P06 | -------------------------------
+2026-09-24 10:39:15 | INFO | P06 | 02. DECLARE the target and feature.
+2026-09-24 10:39:15 | INFO | P06 | -------------------------------
+2026-09-24 10:39:15 | INFO | P06 | Target:  Life expectancy
+2026-09-24 10:39:15 | INFO | P06 | Feature: Schooling
+2026-09-24 10:39:15 | INFO | P06 | 
+I want to predict life expectancy.
+
+I selected schooling as the feature.
+
+Higher schooling may be associated with better health outcomes,
+so schooling might contain useful information
+for predicting life expectancy.
+
+I do not know yet how well schooling will predict life expectancy.
+The modeling process will provide evidence.
+
+2026-09-24 10:39:15 | INFO | P06 | -------------------------------
+2026-09-24 10:39:15 | INFO | P06 | 03. PREPARE the modeling data.
+2026-09-24 10:39:15 | INFO | P06 | -------------------------------
+2026-09-24 10:39:15 | INFO | P06 | Original rows: 2938
+2026-09-24 10:39:15 | INFO | P06 | Modeling rows: 2768
+2026-09-24 10:39:15 | INFO | P06 | Rows dropped: 170
+2026-09-24 10:39:15 | INFO | P06 | X shape: (2768, 1)
+2026-09-24 10:39:15 | INFO | P06 | y shape: (2768,)
+2026-09-24 10:39:15 | INFO | P06 | -------------------------------
+2026-09-24 10:39:15 | INFO | P06 | 04. SPLIT into training and test data.
+2026-09-24 10:39:15 | INFO | P06 | -------------------------------
+2026-09-24 10:39:15 | INFO | P06 | 
+I will use 80% of the modeling rows for training
+and hold back 20% for testing.
+
+I want most of the available data to be available
+for learning the model,
+while still keeping a separate set of observations
+that the model did not see during training.
+
+The test rows will be used later
+to evaluate how the trained model performs
+on unseen observations.
+
+I will use a random seed of 42.
+
+The specific value 42 is not analytically important.
+I use a fixed seed so the random split is reproducible.
+Running the project again will produce the same
+training and test observations,
+which makes results easier to reproduce and compare.
+
+2026-09-24 10:39:15 | INFO | P06 | Training rows: 2214
+2026-09-24 10:39:15 | INFO | P06 | Test rows: 554
+2026-09-24 10:39:15 | INFO | P06 | -------------------------------
+2026-09-24 10:39:15 | INFO | P06 | 05. BASELINE with a simple reference model.
+2026-09-24 10:39:15 | INFO | P06 | -------------------------------
+2026-09-24 10:39:15 | INFO | P06 | 
+Before evaluating the LinearRegression model,
+I need a simple baseline for comparison.
+
+The baseline will ignore schooling 
+and predict the average life expectancy
+from the training data for every test observation.
+
+A useful predictive model should improve
+on this simple reference prediction.
+
+2026-09-24 10:39:15 | INFO | P06 | Baseline strategy: mean
+2026-09-24 10:39:15 | INFO | P06 | Baseline RMSE: 9.30
+2026-09-24 10:39:15 | INFO | P06 | Baseline R-squared: -0.002
+2026-09-24 10:39:15 | INFO | P06 | -------------------------------
+2026-09-24 10:39:15 | INFO | P06 | 06. TRAIN a LinearRegression model.
+2026-09-24 10:39:15 | INFO | P06 | -------------------------------
+2026-09-24 10:39:15 | INFO | P06 | 
+I will use LinearRegression.
+
+Linear regression fits a straight-line relationship
+between the selected feature and target.
+
+This gives a simple and interpretable model
+that can be compared with the baseline.
+
+Fitting a line does not prove that a straight line
+is a good description of the relationship.
+
+The evaluation metrics and residual plot
+will help assess whether the model is useful.
+
+2026-09-24 10:39:15 | INFO | P06 | The model learned this line:
+2026-09-24 10:39:15 | INFO | P06 | Life expectancy = 2.083 * Schooling + 44.439
+2026-09-24 10:39:15 | INFO | P06 | -------------------------------
+2026-09-24 10:39:15 | INFO | P06 | 07. PREDICT on X_test.
+2026-09-24 10:39:15 | INFO | P06 | -------------------------------
+2026-09-24 10:39:15 | INFO | P06 | Predictions created: 554
+2026-09-24 10:39:15 | INFO | P06 | -------------------------------
+2026-09-24 10:39:15 | INFO | P06 | 08. EVALUATE baseline vs model on y_test.
+2026-09-24 10:39:15 | INFO | P06 | -------------------------------
+2026-09-24 10:39:15 | INFO | P06 | BASELINE RESULTS
+2026-09-24 10:39:15 | INFO | P06 | RMSE:      9.30
+2026-09-24 10:39:15 | INFO | P06 | R-squared: -0.002
+2026-09-24 10:39:15 | INFO | P06 | LINEAR REGRESSION RESULTS
+2026-09-24 10:39:15 | INFO | P06 | RMSE:      5.82
+2026-09-24 10:39:15 | INFO | P06 | R-squared: 0.608
+2026-09-24 10:39:15 | INFO | P06 | -------------------------------
+2026-09-24 10:39:15 | INFO | P06 | 09. VISUALIZE predictions and residuals.
+2026-09-24 10:39:15 | INFO | P06 | -------------------------------
+2026-09-24 10:39:16 | INFO | P06 | Chart saved successfully at docs/images/regression-predictions.png.
+2026-09-24 10:39:16 | INFO | P06 | Chart saved successfully at docs/images/regression-residuals.png.
+2026-09-24 10:39:16 | INFO | P06 | -------------------------------
+2026-09-24 10:39:16 | INFO | P06 | 10. ASSESS the results.
+2026-09-24 10:39:16 | INFO | P06 | -------------------------------
+2026-09-24 10:39:16 | INFO | P06 | CUSTOM OBSERVATIONS:
+    I used schooling to predict mortality.
+
+    The baseline RMSE was 9.30.
+    The LinearRegression RMSE was 5.82.
+
+    Compared with the baseline,
+    the LinearRegression model improved 
+    performance, reducing the average prediction error by 3.48 years (a ~37.4% reduction in error).
+
+    The model R-squared was 0.608 meaning that 
+    about 60% of the variance in life expectancy
+    can be explained by schooling.
+
+    In the residual plot, I observed the spread
+    of the residuals are not uniform across the 0-axis. 
+    
+    Based on this evidence, the model may not be capturing all the 
+    factors influencing life expectancy, and there might be 
+    some systematic patterns in the residuals.
+    
+    I conclude that the LinearRegression model using schooling 
+    as a predictor for life expectancy provides a reasonable fit 
+    for life expectancy, but it does not capture all the factors influencing it.
+
+    Next, I would like to try a gradient boosting model 
+    to incorporate multiple features to improve the model's predictive power.
+    
+2026-09-24 10:39:16 | INFO | P06 | In a script, call plt.show() at the end to display all charts.
+2026-09-24 10:39:16 | INFO | P06 | Close all chart windows (with the close button) to continue.
+2026-09-24 10:39:25 | INFO | P06 | ===================================
+2026-09-24 10:39:25 | INFO | P06 | END main() - Executed successfully!
+2026-09-24 10:39:25 | INFO | P06 | ===================================
