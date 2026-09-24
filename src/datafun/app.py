@@ -82,6 +82,7 @@ LOG: logging.Logger = get_logger("P06", level="DEBUG")
 
 # === LOCATE THE DATA FILE ===
 
+# CUSTOM: Read in the CSV file containing the life expectancy data.
 DATA_FILE_PATH: Final[Path] = Path("data") / "raw" / "life_expectancy_table.csv"
 
 # === LOCATE THE CHART OUTPUT ===
@@ -94,47 +95,51 @@ RESIDUAL_CHART_PATH: Final[Path] = CHART_DIR / "regression-residuals.png"
 
 # === DETERMINE WHAT ONE ROW REPRESENTS ===
 
+# CUSTOM: Update grain
 GRAIN: Final[str] = "one country"
 
 # === DECLARE THE TARGET ===
 
-# CUSTOM: Choose one NUMERIC target value to predict.
+# Choose one NUMERIC target value to predict.
 # This must match a numeric column name EXACTLY
 # as it appears in the data file.
 
+# CUSTOM: Change target to life expectancy
 TARGET_COLUMN: Final[str] = "Life expectancy"
 
 # === DECLARE THE FEATURE ===
 
-# CUSTOM: Choose one NUMERIC feature
+# Choose one NUMERIC feature
 # that might help predict the target.
 # This must match a numeric column name EXACTLY
 # as it appears in the data file.
 
+# CUSTOM: Change feature to schooling
 FEATURE_COLUMN: Final[str] = "Schooling"
 
 # === DOCUMENT WHY THE FEATURE MIGHT HELP ===
 
-# CUSTOM: Document the reasoning behind the feature choice.
+# Document the reasoning behind the feature choice.
 # Do not assume the feature will work well.
 # The model and evaluation will provide evidence.
 
+# CUSTOM: Update feature decision
 FEATURE_DECISION: Final[str] = r"""
 I want to predict life expectancy.
 
 I selected schooling as the feature.
 
-Higher schooling may be associated with better health outcomes,
-so schooling might contain useful information
-for predicting life expectancy.
+Level of schooling may be associated 
+with life expectancy.
 
-I do not know yet how well schooling will predict life expectancy.
+I do not know yet how well schooling 
+will predict life expectancy.
 The modeling process will provide evidence.
 """
 
 # === DECLARE THE TRAIN / TEST SPLIT ===
 
-# CUSTOM: Decide how much data should be held back for testing.
+# Decide how much data should be held back for testing.
 # The test data should NOT be used to train the model.
 
 TEST_FRACTION: Final[float] = 0.20
@@ -146,7 +151,7 @@ RANDOM_SEED: Final[int] = 42
 
 # === DOCUMENT THE SPLIT DECISION ===
 
-# CUSTOM: Document the reasoning behind BOTH choices.
+# Document the reasoning behind BOTH choices.
 # The fraction and random seed should not be unexplained numbers.
 
 SPLIT_DECISION: Final[str] = r"""
@@ -177,6 +182,7 @@ BASELINE_STRATEGY: Final[str] = "mean"
 
 # === DOCUMENT THE BASELINE DECISION ===
 
+# CUSTOM: Update baseline decision
 BASELINE_DECISION: Final[str] = r"""
 Before evaluating the LinearRegression model,
 I need a simple baseline for comparison.
@@ -191,6 +197,7 @@ on this simple reference prediction.
 
 # === DOCUMENT THE MODEL DECISION ===
 
+# CUSTOM: Update model decision
 MODEL_DECISION: Final[str] = r"""
 I will use LinearRegression.
 
@@ -233,20 +240,18 @@ def main() -> None:
 
     df: pd.DataFrame = pd.read_csv(DATA_FILE_PATH)
 
-
-
-    # --- START OF DATA CLEANING CODE ---
-# 1. Strip hidden whitespace from column names to prevent KeyErrors
+    # CUSTOM: --- START OF DATA CLEANING CODE ---
+    # Strip hidden whitespace from column names to prevent 
     df.columns = df.columns.str.strip()
 
-# 2. Strip hidden whitespace from any text/string columns
+    # Strip hidden whitespace from any text/string columns
     string_cols = df.select_dtypes(include=['object']).columns
     df[string_cols] = df[string_cols].apply(lambda x: x.str.strip() if hasattr(x, 'str') else x)
 
-# 3. Safely drop records missing core target fields
+    # Safely drop records missing core target fields
     if 'Life expectancy ' in df.columns:
         df = df.dropna(subset=['Life expectancy '])
-# ---- END OF DATA CLEANING CODE ----
+    # ---- END OF DATA CLEANING CODE ----
 
     LOG.info("Data loaded successfully.")
     LOG.info(f"Grain: {GRAIN}")
@@ -449,9 +454,9 @@ def main() -> None:
         label="Predicted",
     )
 
-    # CUSTOM: The analyst can customize
+    # The analyst can customize
     # the returned Matplotlib Axes object.
-
+    # CUSTOM: Customize the title, labels, and legend of the predictions chart.
     prediction_ax.set_title("Schooling vs. Life Expectancy")
     prediction_ax.set_xlabel("Schooling")
     prediction_ax.set_ylabel("Life Expectancy")
@@ -486,9 +491,9 @@ def main() -> None:
 
     residual_ax.axhline(0)
 
-    # CUSTOM: The analyst can customize
+    # The analyst can customize
     # the returned Matplotlib Axes object.
-
+    # CUSTOM: Customize the title, labels, and legend of the residuals chart.
     residual_ax.set_title("Residuals for Life Expectancy Model")
     residual_ax.set_xlabel("Schooling")
     residual_ax.set_ylabel("Residual (Actual - Predicted Life Expectancy)")
@@ -514,6 +519,7 @@ def main() -> None:
     # Then record your CUSTOM observations
     # in a simple multi-line raw string.
 
+    # CUSTOM: Update observations about the model's performance and residual patterns.
     LOG.info(r"""CUSTOM OBSERVATIONS:
     I used schooling to predict mortality.
 
