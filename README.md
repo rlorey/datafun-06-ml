@@ -14,7 +14,7 @@
 This project builds a predictive machine learning pipeline using **Linear Regression** to analyze and estimate global life expectancy metrics based on schooling.
 
 ### 🧹 Data Cleaning Pipeline
-Before training the model, the raw dataset (`data/raw/life_expectancy_table.csv`) undergoes a rigorous preprocessing stage to ensure statistical integrity:
+Before training the model, the raw dataset (`data/raw/life_expectancy_table.csv`) undergoes a preprocessing stage:
 * **Whitespace Elimination:** Strips hidden leading and trailing spaces from structural column headers to prevent `KeyError` exceptions.
 * **String Standardization:** Sanitizes text entries across categorical features like country names and regions.
 * **Missing Value Management:** Safely drops records containing missing values in core target fields (such as `Life expectancy` and `Year`) to ensure a continuous, clean matrix for regression mathematics.
@@ -28,7 +28,6 @@ The project utilizes several fundamental data science workflows and evaluation m
 * **Model Evaluation Metrics:** 
   * **Mean Squared Error (MSE):** Measures the average squared difference between estimated values and the actual target.
   * **R² Score (Coefficient of Determination):** Quantifies the proportion of variance in life expectancy that is predictable from the independent input variables.
-
 
 ## Standard Process
 
@@ -61,12 +60,6 @@ EVALUATE    baseline vs model on y_test
 - **pyproject.toml** - project configuration
 - **zensical.toml** - documentation configuration
 
-## Common Workflow
-
-Follow the
-[step-by-step workflow guide](https://denisecase.github.io/pro-analytics-02/workflow-b-apply-example-project/)
-carefully.
-
 ## Success
 
 After completing Phase 1. **Start & Run**, you'll have the example project,
@@ -80,22 +73,12 @@ END main() - Executed successfully!
 ===================================
 ```
 
-## Command Reference
-
-The commands below are used in the workflow guide above.
-They are provided here for convenience.
-
-Follow the guide for the **full instructions**.
-
-<details>
-<summary>Show command reference</summary>
-
 ### In a machine terminal (open in your `Repos` folder)
 
 Open a machine terminal in your `Repos` folder:
 
 ```shell
-git clone https://github.com/denisecase/datafun-06-ml
+git clone https://github.com/rlorey/datafun-06-ml
 
 cd datafun-06-ml
 code .
@@ -179,7 +162,7 @@ Press `Ctrl c` (both keys together) or `Ctrl+Z` then `Enter` on Windows.
 
 ## Data Card
 
-- [Palmer Penguins Data Card](./docs/data-card.md)
+- [Life Expectancy Data Card](./docs/data-card.md)
 
 ## Annotations
 
