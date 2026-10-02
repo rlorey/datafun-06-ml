@@ -241,16 +241,18 @@ def main() -> None:
     df: pd.DataFrame = pd.read_csv(DATA_FILE_PATH)
 
     # CUSTOM: --- START OF DATA CLEANING CODE ---
-    # Strip hidden whitespace from column names to prevent 
+    # Strip hidden whitespace from column names to prevent
     df.columns = df.columns.str.strip()
 
     # Strip hidden whitespace from any text/string columns
-    string_cols = df.select_dtypes(include=['str']).columns
-    df[string_cols] = df[string_cols].apply(lambda x: x.str.strip() if hasattr(x, 'str') else x)
+    string_cols = df.select_dtypes(include=["str"]).columns
+    df[string_cols] = df[string_cols].apply(
+        lambda x: x.str.strip() if hasattr(x, "str") else x
+    )
 
     # Safely drop records missing core target fields
-    if 'Life expectancy ' in df.columns:
-        df = df.dropna(subset=['Life expectancy '])
+    if "Life expectancy " in df.columns:
+        df = df.dropna(subset=["Life expectancy "])
     # ---- END OF DATA CLEANING CODE ----
 
     LOG.info("Data loaded successfully.")
