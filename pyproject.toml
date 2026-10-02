@@ -129,6 +129,7 @@ requires = ["hatchling"]
 # CUSTOM: Must match src/ folders.
 packages = ["src/datafun"]  # REQ.PACKAGES: Discovery rooted at src/.
 
-[tool.coverage.run]
-source = ["datafun"]
+[tool.leakage]
+cov-target = "datafun"
+
 
