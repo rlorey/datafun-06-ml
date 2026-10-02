@@ -245,7 +245,7 @@ def main() -> None:
     df.columns = df.columns.str.strip()
 
     # Strip hidden whitespace from any text/string columns
-    string_cols = df.select_dtypes(include=['object']).columns
+    string_cols = df.select_dtypes(include=['str']).columns
     df[string_cols] = df[string_cols].apply(lambda x: x.str.strip() if hasattr(x, 'str') else x)
 
     # Safely drop records missing core target fields
