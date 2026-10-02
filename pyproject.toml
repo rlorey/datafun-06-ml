@@ -129,5 +129,6 @@ requires = ["hatchling"]
 # CUSTOM: Must match src/ folders.
 packages = ["src/datafun"]  # REQ.PACKAGES: Discovery rooted at src/.
 
-[tool.pytest.ini_options]
-addopts = "--cov=datafun"
+[tool.coverage.run]
+source = ["datafun"]
+
