@@ -131,5 +131,3 @@ packages = ["src/datafun"]  # REQ.PACKAGES: Discovery rooted at src/.
 
 [tool.leakage]
 cov-target = "datafun"
-
-
