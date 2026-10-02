@@ -23,8 +23,7 @@ Once familiar with the data, it enables predicting
 fare/total/tip from distance, passengers, time, borough.
 
 - Source: <https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page>
-- File: <https://forum.starrocks.io/t/loading-and-querying-nyc-yellow-or-green-taxi-data-parquet-format-with-starrocks/188>
--
+
 
 ### C) California housing / housing prices
 
