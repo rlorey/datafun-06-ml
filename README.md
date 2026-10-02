@@ -25,7 +25,7 @@ The project utilizes several fundamental data science workflows and evaluation m
 * **Train/Test Split:** The dataset is split into training sets (to teach the model patterns) and testing sets (to evaluate performance on unseen data), preventing overfitting.
 * **Feature Selection:** Identifies highly correlated explanatory features that hold a strong linear relationship with mortality and longevity rates.
 * **Linear Regression:** Fits an optimal hyperplane (line of best fit) minimizing the residual sum of squares between the observed data points and predicted values.
-* **Model Evaluation Metrics:** 
+* **Model Evaluation Metrics:**
   * **Mean Squared Error (MSE):** Measures the average squared difference between estimated values and the actual target.
   * **R² Score (Coefficient of Determination):** Quantifies the proportion of variance in life expectancy that is predictable from the independent input variables.
 

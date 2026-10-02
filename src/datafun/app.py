@@ -129,10 +129,10 @@ I want to predict life expectancy.
 
 I selected schooling as the feature.
 
-Level of schooling may be associated 
+Level of schooling may be associated
 with life expectancy.
 
-I do not know yet how well schooling 
+I do not know yet how well schooling
 will predict life expectancy.
 The modeling process will provide evidence.
 """
@@ -187,7 +187,7 @@ BASELINE_DECISION: Final[str] = r"""
 Before evaluating the LinearRegression model,
 I need a simple baseline for comparison.
 
-The baseline will ignore schooling 
+The baseline will ignore schooling
 and predict the average life expectancy
 from the training data for every test observation.
 
@@ -529,25 +529,25 @@ def main() -> None:
     The LinearRegression RMSE was 5.82.
 
     Compared with the baseline,
-    the LinearRegression model improved 
+    the LinearRegression model improved
     performance, reducing the average prediction error by 3.48 years (a ~37.4% reduction in error).
 
-    The model R-squared was 0.608 meaning that 
+    The model R-squared was 0.608 meaning that
     about 60% of the variance in life expectancy
     can be explained by schooling.
 
     In the residual plot, I observed the spread
-    of the residuals are not uniform across the 0-axis. 
-    
-    Based on this evidence, the model may not be capturing all the 
-    factors influencing life expectancy, and there might be 
+    of the residuals are not uniform across the 0-axis.
+
+    Based on this evidence, the model may not be capturing all the
+    factors influencing life expectancy, and there might be
     some systematic patterns in the residuals.
-    
-    I conclude that the LinearRegression model using schooling 
-    as a predictor for life expectancy provides a reasonable fit 
+
+    I conclude that the LinearRegression model using schooling
+    as a predictor for life expectancy provides a reasonable fit
     for life expectancy, but it does not capture all the factors influencing it.
 
-    Next, I would like to try a gradient boosting model 
+    Next, I would like to try a gradient boosting model
     to incorporate multiple features to improve the model's predictive power.
     """)
 
